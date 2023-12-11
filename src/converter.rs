@@ -24,7 +24,6 @@ pub fn convert_APX_to_ICCMA2023(mut filepath : String) {
             let mut buff = line.strip_prefix("att(a").unwrap();
             let buff2 = buff.strip_suffix(").").unwrap();
             let buff2 = buff2.replace(",a", " ");
-            println!("{}", buff2);
             f.write(buff2.as_bytes()).unwrap();
             f.write(&[b'\n']);
         }
