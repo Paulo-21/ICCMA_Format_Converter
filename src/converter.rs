@@ -3,8 +3,7 @@ use std::fs::File;
 use std::io::Write;
 
 pub fn convert_APX_to_ICCMA2023(mut filepath : String) {
-    println!("{}", filepath);
-    let content  = fs::read_to_string("input3.txt").unwrap();
+    let content  = fs::read_to_string(filepath.clone()).unwrap();
     
     filepath.push_str(".af");
     let mut f = File::create(filepath).unwrap();
