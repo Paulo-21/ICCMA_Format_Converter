@@ -37,9 +37,9 @@ pub fn convert_ICCMA2023_to_APX(mut filepath : String) {
     filepath.push_str(".apx");
     let mut f = File::create(filepath).unwrap();
     let mut iter = content.lines();
-    let nb_arg = iter.next().unwrap().split_ascii_whitespace().nth(2).unwrap().parse().unwrap();
-    println!("{}", nb_arg);
-    for i in 1..nb_arg {
+    let nb_arg : i32 = iter.next().unwrap().split_ascii_whitespace().nth(2).unwrap().parse().unwrap();
+    
+    for i in 1..nb_arg+1 {
         let mut buff = String::from("arg(a");
         buff.push_str(i.to_string().as_str());
         buff.push_str(").");
